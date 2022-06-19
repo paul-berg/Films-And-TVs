@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav id='menuBar' class="backgroundDarkGray">
+
+        <ul>
+            <li>
+                <div id='menuBarLogo'>
+                    <img id="imdbLogo"
+                        src="https://images-na.ssl-images-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png"
+                        alt="IMDb.com logo">
+                </div>
+            </li>
+            <li><input type="text" id="searchField"></li>
+            <li><button id="searchButton" class="hoverGray searchButton navButton">search</button></li>
+            <li>
+                <div class="hoverGray navButton"><a href="#advancedSearch">advanced search</a></div>
+            </li>
+            <li id='loginButton' class="hoverGray navButton"><a href="#login">Sign in</a></li>
+            <li>
+                <div id='userMenuButton' class="navButton"></div>
+                <ul id='userMenuList'>
+                    <li id="yourWatchlistButton" class="hoverGray">Your watchlist</li>
+                    <li id="userListButton" class="hoverGray">User list</li>
+                    <li id="editProfileButton" class="hoverGray">Edit profile</li>
+                    <li id="logOutAcc" class="hoverGray">Sign Out</li>
+                </ul>
+
+            </li>
+
+        </ul>
+    </nav>
+    <div class="deleteWindow">
+        <div class='deleteContainer'>
+            <div class='deleteHeader'>
+                <div>Delete account permanently?</div>
+                <div>If you delete account, you won't be able to recover it. Do you want to delete it</div>
+            </div>
+            <div class="deleteBody">
+
+                <button class="reviewButton" id="deleteAcc">Delete</button>
+                <button class="reviewButton" id="hideDeleteAcc">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="reviewWindow">
+        <div class="closeReviewContainer">
+        </div>
+        <div class="reviewContainer">
+            <button class="closeReviewContainer"></button>
+            <div class="reviewBody">
+                <div class="reviewHeader">
+                    <div class="reviewImageContainer">
+                        <img class="poster"
+                            src="https://imdb-api.com/images/original/MV5BMWIzNzA4MmUtYTIzNy00Y2Q5LWIyM2YtZGRiYzM0ZWQzOTU2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_Ratio0.6699_AL_.jpg"
+                            alt="">
+                    </div>
+                    <div class="reviewHeaderDescription">
+                        <div class="reviewHeaderTitle">
+
+                        </div>
+                        <hr>
+                        <div class="reviewHeaderItem">
+                            Add an item
+                        </div>
+                    </div>
+                </div>
+                <div class="reviewTitle">your review</div>
+                <div class="reviewTitleContainer">
+                    <input type="text" class="poster" placeholder="Write a headline for your review here"
+                        maxlength="175" required="" value="">
+                    <div class="reviewValidation title">
+                    </div>
+                </div>
+                <div class="reviewPlotContainer poster">
+                    <textarea class="poster" placeholder="Write your review here" maxlength="10000" rows="6"
+                        required=""></textarea>
+                    <div class="reviewValidation plot">
+
+
+                    </div>
+                </div>
+                <div class="reviewSpoilersContainer">
+                    <div> Does this review contain spoilers?</div>
+                    <input type="radio" class="spoilers" name="spoilers" id="contain" value="1"> <label
+                        for="contain">Yes</label>
+                    <input type="radio" class="spoilers" name="spoilers" id="notContain" value='0'> <label
+                        for="notContain">No</label>
+                    <div class="reviewValidation spoilers">
+                    </div>
+                </div>
+                <button id="submitReview" class="poster reviewButton">Submit</button>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="greatContainer">
+        <div id="main">
+
+            <div id='inTheaters'></div>
+            <div class="mainTitle">Coming soon</div>
+            <div id='comingSoon'></div>
+            <div id='boxOffice'></div>
+            <div class="mainTitle">Explore Movies & TV shows</div>
+            <div class="mainTitle">Most popular movies</div>
+            <div id='mostPopularMovies'></div>
+            <div class="mainTitle">Most popular TV shows</div>
+            <div id='mostPopularTVs'></div>
+            <div class="mainTitle">Top 250 movies</div>
+            <div id='top250Movies'></div>
+            <div class="mainTitle">Top 250 TV shows</div>
+            <div id='top250TVs'></div>
+
+        </div>
+        <div id="advancedSearch">
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Title</h3>
+                </div>
+                <div class="inputs"><input name='title' class="formControl title"><em>e.g. The Godfather</em>
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Title Type</h3>
+                </div>
+                <div class="inputs titleType">
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Release Date</h3>
+                </div>
+                <div class="inputs">
+                    <div class="row flexStart">
+                        <div><input maxlength="11" name='release_date' class="formControl releaseDateMin">
+                        </div>
+                        <div>&nbsp;to&nbsp;</div>
+                        <div><input maxlength="11" name='release_date' class="formControl releaseDateMax">
+                        </div>
+                    </div>
+                    <div>Format: YYYY-MM-DD, YYYY-MM, or YYYY</div>
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">User Rating</h3>
+                </div>
+                <div class="inputs">
+                    <div class="row flexStart">
+                        <div><select name='user_rating' class="userRatingMin">
+                            </select></div>
+                        <div>&nbsp;to&nbsp;</div>
+                        <div><select name='user_rating' class="userRatingMax">
+                            </select></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Number of Votes </h3>
+                </div>
+                <div class="inputs">
+                    <div class="row flexStart">
+                        <div><input name="num_votes" class="formControl numVotesMin" type="number" min="0">
+                        </div>
+                        <div>&nbsp;to&nbsp;</div>
+                        <div><input name="num_votes" class="formControl numVotesMax" type="number" min="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Genres</h3>
+                </div>
+                <div class="inputs genres titleType">
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Title Groups</h3>
+                </div>
+                <div class="inputs titleGroups titleType">
+
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Title Data </h3>
+                </div>
+                <div class="inputs"><select multiple="" name='has' class="titleData " size="7"> </select></div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Companies</h3>
+                </div>
+                <div class="inputs companies titleType">
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">US Certificates</h3>
+                </div>
+                <div class="inputs certificates inOneLine">
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Color Info</h3>
+                </div>
+                <div class="inputs colorInfo inOneLine">
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Countries</h3>
+                </div>
+                <div class="inputs"><select multiple="" name="countries" class="countries scroll" size="7">
+                    </select></div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Keyword </h3>
+                    <span class="less-emphasis">Search for a notable object, concept, style or
+                        aspect.</span>
+                </div>
+                <div class="inputs"><input name="keywords" id="keywords" class="formControl"></div>
+            </div>
+            <div class="clause" id="languages">
+                <div>
+                    <h3 class="labelAdvSearch">Languages</h3>
+                </div>
+                <div class="inputs"><select multiple="" name="languages" class="languages scroll" size="7">
+                    </select></div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Filming Locations</h3>
+                </div>
+                <div class="inputs"><input name="locations" class="formControl filmingLocations"></div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Popularity </h3>
+                </div>
+                <div class="inputs">
+                    <div class="row flexStart">
+                        <div><input name="moviemeter" class="formControl moviemeterMin" type="number" min="0">
+                        </div>
+                        <div>&nbsp;to&nbsp;</div>
+                        <div><input name="moviemeter" class="formControl moviemeterMax" type="number" min="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Plot</h3>
+                    <span class="less-emphasis">Search for words that might appear in the plot
+                        summary.</span>
+                </div>
+                <div class="inputs"><input name="plot" class="formControl plot"></div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Runtime</h3>
+                </div>
+                <div class="inputs">
+                    <div class="row flexStart">
+                        <div><input name="runtime" class="formControl runtimeMin" type="number" min="0">
+                        </div>
+                        <div>&nbsp;to&nbsp;</div>
+                        <div><input name="runtime" class="formControl runtimeMax" type="number" min="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clause">
+                <div>
+                    <h3 class="labelAdvSearch">Sound Mix</h3>
+                </div>
+                <div class="inputs soundMix titleType">
+                </div>
+            </div>
+            <div class="clause">
+                <h3 class="labelAdvSearch">Display Options</h3>
+                <div class="inputs">
+                    <div class="row flexStart">
+                        <div><select id="numberPerPage" class="">
+                                <option value="50"> 50 per page</option>
+                                <option value="100"> 100 per page</option>
+                                <option value="250"> 250 per page</option>
+                            </select></div>&nbsp;sorted by:&nbsp;<div>
+                            <select class="scroll sortBy">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="advancedSearchButton" class="yellowButton">Search</button>
+        </div>
+        <div id="signUp">
+            <div class="greatContainer">
+                <img id="imdbLogo"
+                    src="https://images-na.ssl-images-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png"
+                    alt="IMDb.com logo">
+                <div id="signUpContainer">
+                    <div class="logInTitle">Create account</div>
+                    <form action="">
+                        <div>
+                            <label for="name" id="label-signin-login" class="logInSubtitle">Your name </label>
+                        </div>
+                        <div>
+                            <input type="text" id="signin-login" class="field required logInField">
+                        </div>
+                        <div class="signUpValidationLogin loginValidation"></div>
+                        <div>
+                            <label for="email" id="label-signin-email" class="logInSubtitle">E-mail </label>
+                        </div>
+                        <div>
+                            <input type="email" id="signin-email" class="field required logInField">
+                        </div>
+                        <div class="signUpValidationEmail loginValidation"></div>
+                        <div>
+                            <label for="password" id="label-signin-password" class="logInSubtitle">Password</label>
+                        </div>
+                        <div>
+                            <input type="password" id="signin-password" class="field required logInField">
+                        </div>
+                        <div class="signUpValidationPassword loginValidation"></div>
+                        <div class="tips">Passwords must be at least 8 characters.</div>
+                        <div>
+                            <input type="checkbox" id='openPassword'> <label for="openPassword">Show password</label>
+                        </div>
+                        <div>
+                            <button class="logInField yellowButton" id="createAcc">Create your IMDb account</button>
+                        </div>
+                        <div class="logInSubtitle">Already have an account?</div>
+                        <div>
+                            <a href="#login" class="logInField yellowButton">Sign-In now</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="login">
+            <img id="imdbLogo"
+                src="https://images-na.ssl-images-amazon.com/images/G/01/imdb/authportal/images/www_imdb_logo._CB667618033_.png"
+                alt="IMDb.com logo">
+            <div class="greatContainer row">
+                <form id="loginContainer">
+                    <div class="logInTitle">Sign in</div>
+                    <div>
+                        <label for="name" id="label-login-login" class="logInSubtitle">Your name </label>
+                    </div>
+                    <div>
+                        <input type="text" id="login-login" class="field required logInField">
+                    </div>
+                    <div class="loginValidationLogin loginValidation"></div>
+                    <div>
+                        <label for="password" id="label-login-password" class="logInSubtitle">Password</label>
+                    </div>
+                    <div>
+                        <input type="password" id="login-password" class="field required logInField">
+                    </div>
+                    <div class="loginValidationPassword loginValidation"></div>
+                    <button id="logInAcc" class="logInField yellowButton">Sign-In</button>
+                    <div class="logInSubtitle">New to IMDb?</div>
+                    <a href="#signUp" class="logInField yellowButton">Create your IMDb account</a>
+                </form>
+                <div id="Benefits">
+                    <div class="logInTitle">Benefits of your free IMDb account</div>
+                    <div class="logInSubtitle">Personalized Recommendations</div>
+                    <div>Discover shows you'll love.</div>
+                    <div class="logInSubtitle">Your Watchlist</div>
+                    <div>Track everything you want to watch and receive e-mail when movies open in theaters.</div>
+                    <div class="logInSubtitle">Your Ratings</div>
+                    <div>Rate and remember everything you've seen.</div>
+                    <div class="logInSubtitle">Contribute to IMDb</div>
+                    <div>Add data that will be seen by millions of people and get cool badges.</div>
+                </div>
+            </div>
+        </div>
+        <div id="listOfSearchResults"> </div>
+        <div id="searchResult">
+
+        </div>
+        <div id="personalWatchlist"></div>
+        <div id="editProfile">
+            <div class="greatContainer">
+                <div class="createChangeProfile">
+                    <div class="logInTitle">Edit profile</div>
+                    <div> <label for="newLoginField" class="logInSubtitle">Enter your new login</label></div>
+                    <div> <input type="text" id="newLoginField" class="logInField"></div>
+                    <div>
+                        <label for="newEmailField" class="logInSubtitle">Enter your new e-mail</label>
+                    </div>
+                    <div> <input type="email" id="newEmailField" class="logInField"></div>
+                    <div>
+                        <label for="oldPasswordField" class="logInSubtitle">Enter your old password</label>
+                    </div>
+                    <div> <input type="password" id="oldPasswordField" class="logInField"></div>
+                    <div class="validationOldPass loginValidation"></div>
+                    <div>
+                        <input type="checkbox" id='showOldPassword'> <label for="showOldPassword">Show password</label>
+                    </div>
+                    <div>
+                        <label for="newPasswordField" class="logInSubtitle">Enter your new password</label>
+                    </div>
+                    <div> <input type="password" id="newPasswordField" class="logInField"></div>
+                    <div class="validationNewPass loginValidation"></div>
+                    <div>
+                        <input type="checkbox" id='showNewPassword'> <label for="showNewPassword">Show password</label>
+                    </div>
+                    <div><button id="editAcc" class="logInField yellowButton">Edit account settings</button></div>
+
+                    <div> <button id="showDeleteAcc" class="logInField yellowButton">Delete your account</button> </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="userList">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" class="sortable" data-field="id">#</th>
+                        <th scope="col" class="sortable" data-field="login">Login</th>
+                        <th scope="col" class="sortable" data-field="email">E-mail</th>
+                        <th scope="col" class="sortable" data-field="isAdmin">Access level</th>
+                    </tr>
+                </thead>
+                <tbody id="userListTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+
+</html>

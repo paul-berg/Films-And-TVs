@@ -1,0 +1,1101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+i,
+cite,
+em,
+var,
+dfn,
+address {
+    font-style: normal;
+}
+
+b,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+th {
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+#menuBar a:visited {
+    color: white;
+}
+
+#menuBar a {
+    color: white;
+}
+
+body {
+    background: black;
+    box-sizing: border-box;
+    padding-bottom: 5vw;
+}
+
+
+.makeBodyWhite {
+    background: white;
+}
+
+.skeleton:before {
+    content: "";
+    width: 100%;
+    height: 16px;
+    display: inline-block;
+    background: rgba(0 0 0 / 20%) linear-gradient(100deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.1) 50%, hsla(0, 0%, 100%, 0) 80%) no-repeat -100% 0;
+    background-size: 60% 100%;
+    box-shadow: none;
+    animation: loading 1.5s ease infinite;
+    border-radius: 3px;
+}
+
+@keyframes loading {
+    0% {
+        background-position: -100% 0;
+    }
+
+    100% {
+        background-position: 500% 0;
+    }
+}
+
+.greatContainer {
+    width: 80%;
+}
+
+#menuBar {
+    width: 100%;
+    background-color: rgb(18, 18, 18);
+
+}
+
+#menuBar ul {
+    width: 80%;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+}
+
+#menuBar>ul>li {
+    position: relative;
+    list-style-type: none;
+    list-style: none;
+    display: block;
+    width: fit-content;
+}
+
+.searchButton {
+    height: 46px;
+    color: white;
+    background: #0F1111;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.navButton {
+    margin: inherit 0;
+    padding: 0.75rem 2rem;
+    min-width: fit-content;
+    border-radius: 5px;
+}
+
+#menuBar ul li:first-child {
+    margin-left: 0;
+}
+
+#menuBarLogo {
+    margin-left: 0;
+    height: 46px;
+    width: 94.64px;
+    display: block;
+}
+
+#menuBarLogo img {
+    height: 100%;
+}
+
+#searchField {
+    margin-left: 0;
+    height: 46px;
+    width: 48vw;
+    display: block;
+    border: none;
+    border-radius: 0.2vw;
+}
+
+ul#userMenuList {
+    list-style-type: none;
+    list-style: none;
+    margin-top: -0.5vw;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    z-index: 400;
+}
+
+ul#userMenuList li {
+    background: rgba(0, 0, 0, 0.87);
+    width: 162px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.hoverGray,
+#userMenuButton {
+    cursor: pointer;
+}
+
+.hoverGray:hover,
+#userMenuButton:hover {
+    background: rgb(40, 40, 40) !important;
+
+
+}
+
+.makeVisible {
+    visibility: visible !important;
+}
+
+#main,
+#searchResult,
+#personalWatchlist,
+#editProfile {
+    margin-top: -16px;
+}
+
+#mostPopularMovies,
+#mostPopularTVs,
+#top250Movies,
+#top250TVs,
+.similarsContainer {
+    position: relative;
+}
+
+
+#main {
+    background: black;
+    color: white;
+    margin: 1% 0;
+}
+
+.mainTitle {
+    margin: 2rem 0 1rem;
+    height: 2.5rem;
+    padding-left: 0.75rem;
+    font-size: 2rem;
+    font-weight: 600;
+    /* color: rgba(0, 0, 0, 0.87); */
+    position: relative;
+}
+
+.mainTitle::before {
+    content: '';
+    margin-left: -0.75rem;
+    align-self: flex-start;
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: rgb(245, 197, 24);
+}
+
+.inTheatersFrame {
+    background-color: rgb(22, 20, 17);
+    width: 100%;
+}
+
+.inTheatersContainer {
+    position: relative;
+    box-shadow: inset 0 -25vw 12vw -10vw black;
+}
+
+/* .inTheatersContainer .verticalList {
+    position: absolute;
+    bottom: 42%;
+    left: 0;
+    width: 80%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+} */
+
+.verticalList {
+
+    bottom: 0;
+    margin-left: 0;
+    width: 80%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.newPosterContainer {
+    margin-bottom: 1vw;
+
+}
+
+.verticalList .newPosterContainer {
+    width: 30%;
+    margin-left: 0;
+}
+
+.verticalList .newInfoContainer {
+    width: 30%;
+    margin-left: -35%;
+}
+
+.verticalList .newPosterContainer .poster {
+    width: 100%;
+}
+
+#comingSoon {
+    position: relative;
+}
+
+.trailer {
+    border: 0;
+}
+
+.backgroundDarkGray {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#searchResult .backgroundDarkGray {
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.posterTab {
+    width: 15.17%;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+
+.posterTab:first-of-type {
+    margin-left: 0%;
+}
+
+.posterTab:last-of-type {
+    margin-right: 0%;
+}
+
+.posterTabInfo {
+    margin: 0 1vw;
+    font-size: 1vw;
+    min-height: 3vw;
+    max-height: max-content;
+    /* height: 3.3vw; */
+}
+
+
+
+#searchResult .posterTab {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.poster {
+    width: 100%;
+    cursor: pointer;
+    height: 18vw;
+    object-fit: cover
+}
+
+.verticalListImg {
+    height: 27vw;
+}
+
+.poster.mainPoster {
+    height: 100%;
+}
+
+div.posterTabString {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.searchResultTitle {
+    text-align: start;
+    font-size: 3rem;
+    line-height: 3.125rem;
+    margin: 2rem 0 0.5rem -1.3vw;
+}
+
+.searchResultUnderTitle {
+    width: 100%;
+    margin: 0.8rem 0;
+}
+
+.searchResultInfo {
+    font-size: 1rem;
+}
+
+.searchResultSelectedInfo {
+    color: rgb(14, 99, 190);
+    padding: 1rem 0;
+    border-top: solid rgba(0, 0, 0, 0.1) 2px;
+}
+
+.searchResultSelectedInfoTitle {
+    margin-left: 0;
+    margin-right: 1rem;
+    text-align: left;
+    min-width: fit-content;
+    max-width: 20%;
+}
+
+.searchResultUnderTitle .searchResultSelectedInfoTitle {
+    width: 30%;
+    /* margin-left: -1.5%; */
+}
+
+.plot {
+    line-height: 170%;
+    margin-bottom: 1rem;
+}
+
+.searchResultSelectedInfoPlot {
+    margin-left: 0;
+    text-align: left;
+    min-width: fit-content;
+    max-width: 80%;
+}
+
+.imdbRating {
+    margin-right: 0;
+    text-align: right;
+    width: 70%;
+}
+
+.searchResultSelectedInfoTitle {
+    color: black;
+    font-weight: bold;
+}
+
+.visualInfoWrapper {
+    position: relative;
+    height: 45vw;
+    margin-bottom: 1rem;
+}
+
+.inTheatersContainer {
+    position: relative;
+    width: 100%;
+    height: 52vw;
+}
+
+.inTheatersTrailer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+.trailerMain {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    /* background: seagreen; */
+    border: none;
+    object-fit: fill;
+    padding-right: -50%;
+}
+
+.searchResultTrailer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 99%;
+    border: none;
+    object-fit: fill;
+}
+
+.videoWrapper {
+    position: relative;
+    width: 62.5%;
+    height: 100%;
+    padding-bottom: 44.21%;
+    background-color: #0F1111;
+
+}
+
+.posterWrapper {
+    left: 0;
+    position: relative;
+    width: 37.5%;
+}
+
+.labelAdvSearch {
+    margin-top: 2vh;
+    font-weight: 600;
+}
+
+
+.titleType {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.titleType>div {
+    margin: 0.2vw;
+    width: calc(100% / 4.5 - 0.2vw);
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+}
+
+.titleType>div>label,
+.inOneLine>div>label {
+    margin-left: 0.7rem;
+}
+
+.inOneLine {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inOneLine>div {
+    margin: 0.2vw;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+    min-width: fit-content;
+}
+
+.row.flexStart {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.row.flexStart div {
+    margin-left: 1vw;
+}
+
+#advancedSearchButton {
+    margin: 2vh 0;
+    padding: 0.25rem 2rem;
+    height: 3rem;
+    font-size: 1rem;
+    color: #0F1111;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.topCastContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.newActorDiv {
+    margin: 0.8vw;
+    height: 9vw;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center
+}
+
+.newImgWrapper {
+    position: relative;
+    width: 9vw;
+    height: 9vw;
+    margin-left: 0;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.newImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.posterWrapper .poster {
+    position: absolute;
+}
+
+.actorName {
+    width: calc(90% - 100px);
+    margin-left: 2vh;
+    text-align: left;
+}
+
+.tagWords {
+    margin: 0.5rem 0.5rem 0.5rem;
+    padding: 0.25rem 0.75rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.32);
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.tagWords:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+
+
+.addToWatch {
+    position: relative;
+}
+
+
+
+.addToWatchButton:before {
+    content: '';
+    background: url('./images/plus.svg') no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    z-index: 2;
+}
+
+.addToWatchButton {
+    position: absolute;
+    width: 20%;
+    height: 14%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.addToWatchButton.added {
+    background: rgb(230, 185, 3);
+}
+
+.addToWatchButton.added:before {
+    content: '';
+    background: url('./images/check.svg') no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    z-index: 2;
+}
+
+
+#main .watchButton {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgb(87, 153, 239);
+
+}
+
+#main .watchButton.added {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.watchButton {
+    position: relative;
+    display: block;
+    border: none;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.08);
+    color: rgb(14, 99, 190);
+    margin: 0 auto 1vw;
+    min-height: 2.25rem;
+    height: 2rem;
+    padding: 0 1rem 0 2.3rem;
+    min-width: 3rem;
+    max-width: 100%;
+    font-size: .9rem;
+}
+
+.watchButton:before {
+    content: '+';
+    position: absolute;
+    color: inherit;
+    font-size: 150%;
+    left: 1rem;
+    top: 0rem;
+    z-index: 2;
+}
+
+.watchButton.added:before {
+    content: '';
+    position: absolute;
+    border-color: rgb(87, 153, 239);
+    border-style: solid;
+    border-width: 0.1em 0.1em 0 0;
+    height: 26%;
+    width: 15%;
+    top: 30%;
+    left: 12%;
+    transform: rotate(135deg);
+    z-index: 2;
+}
+
+.spoiler {
+    color: rgb(186, 9, 51);
+    font-weight: 600;
+}
+
+.deleteWindow {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    color: rgb(27, 27, 27);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.deleteContainer {
+    background: white;
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5vw;
+}
+
+.deleteHeader div {
+    margin: 0.9vw 1.5vw;
+}
+
+.deleteHeader div:first-of-type {
+    font-weight: 600;
+}
+
+.deleteHeader div:last-of-type {
+    margin-top: -0.3vw;
+}
+
+.deleteBody {
+    background: rgb(243, 243, 243);
+    border-top: 1px solid rgb(220, 220, 220);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+    padding: 1.3vw 1.5vw;
+}
+
+.deleteBody .reviewButton {
+    width: 49%;
+}
+
+#showDeleteAcc {
+    background: rgb(186, 9, 51);
+    color: white;
+}
+
+.reviewWindow {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    z-index: 100;
+    visibility: hidden;
+}
+
+.reviewWindow .poster {
+    height: auto;
+    cursor: none;
+}
+
+.reviewWindow>.closeReviewContainer {
+    width: calc(100% - 400px);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.reviewHeader {
+    display: flex;
+    flex-direction: row;
+    color: rgb(60, 60, 60);
+}
+
+.reviewHeaderTitle {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.reviewHeaderItem {
+    font-size: 24px;
+    line-height: 1.2vh;
+    font-weight: 800;
+}
+
+.reviewHeaderDescription {
+    width: 85%;
+    margin: 0.5em 0 0.4em 0.4em;
+}
+
+.reviewHeader>hr {
+    margin: 12px 0 8px 5px;
+    height: 2px;
+    background: linear-gradient(to right, #e0e0e0, rgba(0, 0, 0, 0));
+}
+
+.reviewImageContainer {
+    width: 15%;
+    margin-left: 0;
+}
+
+.reviewContainer {
+    height: 100%;
+    width: 400px;
+    margin-right: 0;
+    padding: 3% 0 3%;
+    background-color: rgb(31, 31, 31);
+}
+
+.reviewContainer>button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    background: url('./images/x.svg') no-repeat;
+    background-size: cover;
+    border: none;
+    background-color: inherit;
+}
+
+
+
+.reviewBody {
+    background: white;
+    height: 100%;
+    padding: 0 0.7em;
+    color: black;
+}
+
+.reviewTitle {
+    color: rgb(86, 89, 89);
+    text-transform: uppercase;
+    line-height: 20px;
+    padding: 5px 0;
+    background-color: rgb(243, 243, 243);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.reviewTitleContainer>input {
+    height: 31px;
+}
+
+
+.reviewValidation {
+    margin: 0.5em 0;
+    height: 1.2em;
+    visibility: hidden;
+}
+
+.reviewPlotContainer>textarea {
+    height: 410px;
+}
+
+.reviewButton {
+    height: 30px;
+    color: #0F1111;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+}
+
+
+.reviewValidation,
+.loginValidation {
+    color: rgb(186, 9, 51);
+}
+
+.newReviewContainer {
+    border-radius: 4px;
+    border: 1px solid rgba(220, 220, 220);
+    box-shadow: 0 0 1px rgb(0 0 0 / 12%);
+    padding: 1rem;
+    margin: 0 0 0.25rem;
+}
+
+.reviewValidation.plot {
+    margin-bottom: 1.7em;
+}
+
+.voteButtonLine {
+    justify-content: space-between;
+}
+
+.voteContainer,
+.newTitle {
+    margin-left: 1vh;
+}
+
+.newTitle {
+    font-weight: 800;
+}
+
+.newAuthor,
+.reviewButton.deleteButton {
+    margin-right: 1vh;
+}
+
+#userList .reviewButton {
+    margin-top: 0.8vh;
+    margin-right: 1vw;
+}
+
+.filmPageReviewSpoiler {
+    margin-bottom: 1vw;
+}
+
+.reviewButton.deleteButton {
+    width: 24px;
+    height: 24px;
+    background: url('./images/x_black.svg') no-repeat;
+    background-size: cover;
+    background-color: inherit;
+}
+
+.activated {
+    background: rgb(200, 200, 200);
+}
+
+.voteContainer .reviewButton {
+    width: max-content;
+    text-align: end;
+    padding-left: 2.4vh;
+    margin-right: 1vw;
+}
+
+.voteContainer .reviewButton.liked:before {
+    content: '';
+    top: .25vh;
+    left: .45vh;
+    width: 1.4vh;
+    height: 1.4vh;
+    background: url('./images/thumbsup.svg') no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+.voteContainer .reviewButton.disliked::before {
+    content: '';
+    top: .45vh;
+    left: .45vh;
+    width: 1.4vh;
+    height: 1.4vh;
+    background: url('./images/thumbsdown.svg') no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+
+.changeDisplayingFilms {
+    background: rgba(18, 18, 18, 0.45);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    position: absolute;
+    margin-top: 8%;
+    width: 3vw;
+    height: 4.5vw;
+    z-index: 50;
+
+}
+
+.visualInfoWrapper .changeDisplayingFilms {
+    margin-top: 25%;
+}
+
+.rightPosition {
+    right: 0;
+    margin-right: 0%;
+}
+
+
+.rightPosition::before {
+    content: '';
+    background: url('./images/chevron-right.svg') no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 13%;
+    z-index: 500;
+}
+
+.leftPosition {
+    left: 0;
+    margin-left: 0%;
+}
+
+.leftPosition::before {
+    content: '';
+    background: url('./images/chevron-left.svg') no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 13%;
+    z-index: 500;
+}
+
+.logInTitle {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 110%;
+    margin: 14px 0;
+    text-align: center;
+}
+
+.logInSubtitle {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 140%;
+    text-align: left;
+}
+
+.logInField {
+    border-radius: 4px;
+    height: 34px;
+    width: 242px;
+}
+
+.yellowButton {
+    margin-top: 1rem;
+    background: #E4B721;
+    border: none;
+    padding: 6px 8px;
+    display: block;
+    text-align: center;
+    font-weight: 800;
+    /* vertical-align: middle; */
+}
+
+/* .yellowButton.logInField {
+    margin-top: 40px;
+} */
+
+#login a.yellowButton:last-of-type {
+    margin-top: 0;
+}
+
+#Benefits {
+    min-width: min-content;
+    padding-left: 2rem;
+    /* border-left: solid 2px rgb(200, 200, 200); */
+    font-size: 1rem;
+}
+
+#signUpContainer,
+.createChangeProfile {
+    margin-top: 2rem;
+    width: 242px;
+}
+
+#login .greatContainer {
+    /* width: 60%; */
+    min-width: min-content;
+    margin: 2rem auto;
+}
+
+#loginContainer {
+    min-width: fit-content;
+    padding-right: 2rem;
+}
+
+#imdbLogo {
+    /* position: relative; */
+    display: block;
+    margin: 0 auto;
+}
+
+#signUp,
+#login {
+    padding-top: 3vw;
+}
+
+.verticalTabTitle {
+    color: black;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.verticalTabInfo {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.2em;
+}
+
+.tips {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.8em;
+}
+
+#inTheaters .verticalTabTitle {
+    color: white;
+}
+
+#inTheaters .verticalTabInfo {
+    color: rgba(255, 255, 255, 0.5);
+}
